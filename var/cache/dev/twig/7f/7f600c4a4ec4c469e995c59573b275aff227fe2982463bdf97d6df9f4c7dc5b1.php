@@ -52,22 +52,63 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6\" crossorigin=\"anonymous\">
         ";
-        // line 8
+        // line 9
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 12
         echo "
         ";
-        // line 12
+        // line 13
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 16
         echo "    </head>
     <body>
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        <div class=\"container\">
+            <a class=\"navbar-brand\" href=\"/\">Blog</a>
+            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                <ul class=\"navbar-nav ms-auto mb-3 mb-lg-0\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"/post\">Blog posts</a>
+                    </li>
+                    <li>
+                        ";
+        // line 27
+        if ((0 === twig_compare($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"), true))) {
+            // line 28
+            echo "                            <a class=\"nav-link\" href=\"/comment\">Comments</a>
+                        ";
+        }
+        // line 30
+        echo "                    </li>
+                    <li class=\"nav-item\">
+                        ";
+        // line 32
+        if (twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32))) {
+            // line 33
+            echo "                        <a class=\"nav-link\" href=\"/login\">Login</a>
+                        ";
+        } else {
+            // line 35
+            echo "                        <span class=\"nav-link\">You are logged in as ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "username", [], "any", false, false, false, 35), "html", null, true);
+            echo ", <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Logout</a></span>  
+                        ";
+        }
+        // line 37
+        echo "                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
         ";
-        // line 17
+        // line 42
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 43
         echo "    </body>
 </html>
 ";
@@ -98,7 +139,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,9 +149,9 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
         // line 10
+        echo "            ";
+        // line 11
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -120,7 +161,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
 
     }
 
-    // line 12
+    // line 13
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -130,9 +171,9 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
-        echo "            ";
         // line 14
+        echo "            ";
+        // line 15
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -142,7 +183,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
 
     }
 
-    // line 17
+    // line 42
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,9 +206,14 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  187 => 42,  177 => 15,  175 => 14,  165 => 13,  155 => 11,  153 => 10,  143 => 9,  124 => 5,  112 => 43,  110 => 42,  103 => 37,  95 => 35,  91 => 33,  89 => 32,  85 => 30,  81 => 28,  79 => 27,  66 => 16,  64 => 13,  61 => 12,  58 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -177,6 +223,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6\" crossorigin=\"anonymous\">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -188,6 +235,30 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
         {% endblock %}
     </head>
     <body>
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        <div class=\"container\">
+            <a class=\"navbar-brand\" href=\"/\">Blog</a>
+            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                <ul class=\"navbar-nav ms-auto mb-3 mb-lg-0\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"/post\">Blog posts</a>
+                    </li>
+                    <li>
+                        {% if is_granted('ROLE_ADMIN') == true %}
+                            <a class=\"nav-link\" href=\"/comment\">Comments</a>
+                        {% endif %}
+                    </li>
+                    <li class=\"nav-item\">
+                        {% if app.user is empty %}
+                        <a class=\"nav-link\" href=\"/login\">Login</a>
+                        {% else %}
+                        <span class=\"nav-link\">You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a></span>  
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
         {% block body %}{% endblock %}
     </body>
 </html>
