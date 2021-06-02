@@ -46,15 +46,13 @@ class __TwigTemplate_93d6336fe9e2807834969271664ef4b4995deb3abb71821ecc7a30c17c5
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
+    <button class=\"btn btn-primary\">";
         // line 3
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
 ";
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
-        echo "
-";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -82,8 +80,7 @@ class __TwigTemplate_93d6336fe9e2807834969271664ef4b4995deb3abb71821ecc7a30c17c5
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
-", "post/_form.html.twig", "C:\\Users\\morgo\\Desktop\\Project\\Blog\\templates\\post\\_form.html.twig");
+    <button class=\"btn btn-primary\">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}", "post/_form.html.twig", "C:\\Users\\morgo\\Desktop\\Project\\Blog\\templates\\post\\_form.html.twig");
     }
 }

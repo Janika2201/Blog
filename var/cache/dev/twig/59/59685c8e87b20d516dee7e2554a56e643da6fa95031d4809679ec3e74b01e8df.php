@@ -85,22 +85,33 @@ class __TwigTemplate_733cd84c6ac169513456bc7bd41e9a0b8aad105249c8e1d175153d11f7c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Post</h1>
-
-    ";
-        // line 8
+        echo "<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-13\">
+            <section style=\"width: 500px;\">
+                <div class=\"card-body\">
+                    <div class=\"form-group\">
+                        <h4 class=\" title test-center mt-4\">Edit Post</h4>
+                    </div>
+                    ";
+        // line 14
         echo twig_include($this->env, $context, "post/_form.html.twig", ["button_label" => "Update"]);
         echo "
-
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_index");
-        echo "\">back to list</a>
-
-    ";
-        // line 12
+                </div>
+            </section>
+            <div class=\"mb-3\">
+                ";
+        // line 18
         echo twig_include($this->env, $context, "post/_delete_form.html.twig");
         echo "
+            </div>
+            <a class=\"btn btn-primary\" href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_index");
+        echo "\">back to list</a>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +133,7 @@ class __TwigTemplate_733cd84c6ac169513456bc7bd41e9a0b8aad105249c8e1d175153d11f7c
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  110 => 20,  105 => 18,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,13 +143,24 @@ class __TwigTemplate_733cd84c6ac169513456bc7bd41e9a0b8aad105249c8e1d175153d11f7c
 {% block title %}Edit Post{% endblock %}
 
 {% block body %}
-    <h1>Edit Post</h1>
-
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('post_index') }}\">back to list</a>
-
-    {{ include('post/_delete_form.html.twig') }}
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-13\">
+            <section style=\"width: 500px;\">
+                <div class=\"card-body\">
+                    <div class=\"form-group\">
+                        <h4 class=\" title test-center mt-4\">Edit Post</h4>
+                    </div>
+                    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+                </div>
+            </section>
+            <div class=\"mb-3\">
+                {{ include('post/_delete_form.html.twig') }}
+            </div>
+            <a class=\"btn btn-primary\" href=\"{{ path('post_index') }}\">back to list</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "post/edit.html.twig", "C:\\Users\\morgo\\Desktop\\Project\\Blog\\templates\\post\\edit.html.twig");
     }

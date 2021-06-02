@@ -73,42 +73,32 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"/post\">Blog posts</a>
                     </li>
-                    <li>
-                        ";
-        // line 27
-        if ((0 === twig_compare($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"), true))) {
-            // line 28
-            echo "                            <a class=\"nav-link\" href=\"/comment\">Comments</a>
-                        ";
-        }
-        // line 30
-        echo "                    </li>
                     <li class=\"nav-item\">
                         ";
-        // line 32
-        if (twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32))) {
-            // line 33
+        // line 27
+        if (twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27))) {
+            // line 28
             echo "                        <a class=\"nav-link\" href=\"/login\">Login</a>
                         ";
         } else {
-            // line 35
+            // line 30
             echo "                        <span class=\"nav-link\">You are logged in as ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "username", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30), "username", [], "any", false, false, false, 30), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a></span>  
                         ";
         }
-        // line 37
+        // line 32
         echo "                    </li>
                 </ul>
             </div>
         </div>
     </nav>
         ";
-        // line 42
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 43
+        // line 38
         echo "    </body>
 </html>
 ";
@@ -183,7 +173,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
 
     }
 
-    // line 42
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -213,7 +203,7 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
 
     public function getDebugInfo()
     {
-        return array (  187 => 42,  177 => 15,  175 => 14,  165 => 13,  155 => 11,  153 => 10,  143 => 9,  124 => 5,  112 => 43,  110 => 42,  103 => 37,  95 => 35,  91 => 33,  89 => 32,  85 => 30,  81 => 28,  79 => 27,  66 => 16,  64 => 13,  61 => 12,  58 => 9,  53 => 5,  47 => 1,);
+        return array (  177 => 37,  167 => 15,  165 => 14,  155 => 13,  145 => 11,  143 => 10,  133 => 9,  114 => 5,  102 => 38,  100 => 37,  93 => 32,  85 => 30,  81 => 28,  79 => 27,  66 => 16,  64 => 13,  61 => 12,  58 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -242,11 +232,6 @@ class __TwigTemplate_80af0165b6d9ef8032ad6a644dfcda928bf947de4baa12470388c77e289
                 <ul class=\"navbar-nav ms-auto mb-3 mb-lg-0\">
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"/post\">Blog posts</a>
-                    </li>
-                    <li>
-                        {% if is_granted('ROLE_ADMIN') == true %}
-                            <a class=\"nav-link\" href=\"/comment\">Comments</a>
-                        {% endif %}
                     </li>
                     <li class=\"nav-item\">
                         {% if app.user is empty %}

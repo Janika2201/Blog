@@ -3,35 +3,31 @@
 {% block title %}Post index{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-8">
+            <header class="mb-4">
+                <h1 class="fw-bolder mb-2">Blog posts</h1>
+            </header>
+            {% if is_granted('ROLE_ADMIN') == true%}
+            <div class="mb-3">
+                <a href="{{ path('post_new') }}" class="btn btn-primary">Create new</a>
+            </div>
+            {% endif %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.content }}</td>
-                <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('post_new') }}">Create new</a>
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <a class="btn btn-primary" href="{{ path('post_show', {'id': post.id}) }}">Read More →</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="list-group list-group-flush">
+                <a class=" btn list-group-item list-group-item-action">no records found</a >
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>   
 {% endblock %}

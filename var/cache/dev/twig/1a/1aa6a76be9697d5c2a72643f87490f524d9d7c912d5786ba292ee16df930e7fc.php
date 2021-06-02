@@ -85,17 +85,25 @@ class __TwigTemplate_83536ffc7194047ef9d2d343b90b73f111a92df3652e0004de30ed2fed4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Post</h1>
-
-    ";
-        // line 8
+        echo "<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-13\">
+            <header class=\"px-5 p-3\">
+                <h4 class=\" title test-center mt-4\">Create new Post</h4>
+            </header>
+            <div class=\"mb-3\">
+                ";
+        // line 13
         echo twig_include($this->env, $context, "post/_form.html.twig");
         echo "
-
-    <a href=\"";
-        // line 10
+            </div>
+            <a href=\"";
+        // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("post_index");
-        echo "\">back to list</a>
+        echo "\" class=\"btn btn-primary\">back to list</a>
+        </div>
+    </div>
+</div>  
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +125,7 @@ class __TwigTemplate_83536ffc7194047ef9d2d343b90b73f111a92df3652e0004de30ed2fed4
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  102 => 15,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +135,19 @@ class __TwigTemplate_83536ffc7194047ef9d2d343b90b73f111a92df3652e0004de30ed2fed4
 {% block title %}New Post{% endblock %}
 
 {% block body %}
-    <h1>Create new Post</h1>
-
-    {{ include('post/_form.html.twig') }}
-
-    <a href=\"{{ path('post_index') }}\">back to list</a>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-md-13\">
+            <header class=\"px-5 p-3\">
+                <h4 class=\" title test-center mt-4\">Create new Post</h4>
+            </header>
+            <div class=\"mb-3\">
+                {{ include('post/_form.html.twig') }}
+            </div>
+            <a href=\"{{ path('post_index') }}\" class=\"btn btn-primary\">back to list</a>
+        </div>
+    </div>
+</div>  
 {% endblock %}
 ", "post/new.html.twig", "C:\\Users\\morgo\\Desktop\\Project\\Blog\\templates\\post\\new.html.twig");
     }
